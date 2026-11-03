@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Años - Jhancy Alexandra Isea Olivares</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            50: '#fff9fb',
+                            100: '#fde8ef',
+                            200: '#fbcfe0',
+                            300: '#f8b4cd',
+                            400: '#f285ad',
+                        },
+                        champagne: {
+                            50: '#fffdf9',
+                            100: '#fff7e6',
+                            200: '#f9e7c4',
+                            300: '#e8cb8c',
+                            400: '#d8af5c',
+                            500: '#c59b3f',
+                            600: '#9e7826',
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel Decorative', 'serif'],
+                        script: ['Alex Brush', 'cursive'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados y degradados metálicos */
+        body {
+            background: linear-gradient(135deg, #fff9fb 0%, #fde8ef 40%, #fff7e6 100%);
+            font-family: 'Montserrat', sans-serif;
+            color: #38312e;
+            overflow-x: hidden;
+        }
+
+        /* Texto con gradiente dorado metálico */
+        .gold-metallic-text {
+            background: linear-gradient(135deg, #9e7826 0%, #d8af5c 25%, #fff7e6 50%, #d8af5c 75%, #9e7826 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shineGold 6s linear infinite;
+        }
+
+        @keyframes shineGold {
+            to { background-position: 200% center; }
+        }
+
+        /* Bordes sutiles metálicos */
+        .gold-metallic-border {
+            border-image: linear-gradient(135deg, #d8af5c, #fff7e6, #c59b3f, #d8af5c) 1;
+        }
+
+        /* Sombras doradas lujosas */
+        .gold-luxury-shadow {
+            box-shadow: 0 15px 35px -5px rgba(216, 175, 92, 0.25), 0 5px 15px -3px rgba(242, 133, 173, 0.15);
+        }
+
+        /* Efecto Glassmorphism refinado */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(216, 175, 92, 0.35);
+        }
+
+        /* Mariposa Animada */
+        .butterfly-node {
+            position: fixed;
+            pointer-events: none;
+            z-index: 20;
+            opacity: 0.7;
+            animation: floatButterfly 20s ease-in-out infinite;
+            filter: drop-shadow(0 2px 5px rgba(216, 175, 92, 0.4));
+        }
+
+        .butterfly-wings {
+            animation: flapWings 0.7s ease-in-out infinite alternate;
+            transform-origin: center;
+        }
+
+        @keyframes flapWings {
+            0% { transform: scaleX(1); }
+            100% { transform: scaleX(0.25); }
+        }
+
+        @keyframes floatButterfly {
+            0% { transform: translate(-10vw, 105vh) rotate(10deg) scale(0.6); opacity: 0; }
+            15% { opacity: 0.85; }
+            85% { opacity: 0.85; }
+            100% { transform: translate(110vw, -10vh) rotate(45deg) scale(1); opacity: 0; }
+        }
+
+        /* Canvas de Destellos Sparkles */
+        #sparkles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Modal de Bienvenida (Sobre Elegante) */
+        #envelope-overlay {
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .envelope-hidden {
+            opacity: 0;
+            transform: scale(1.08);
+            pointer-events: none;
+        }
+
+        /* Pulsación del botón de música */
+        .pulse-gold {
+            animation: pulseGoldAnim 2.5s infinite;
+        }
+
+        @keyframes pulseGoldAnim {
+            0% { box-shadow: 0 0 0 0 rgba(216, 175, 92, 0.7); }
+            70% { box-shadow: 0 0 0 16px rgba(216, 175, 92, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(216, 175, 92, 0); }
+        }
+
+        /* Marcos y filigranas de esquina */
+        .corner-ornament {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            border-color: rgba(216, 175, 92, 0.6);
+            pointer-events: none;
+        }
+        .corner-tl { top: 12px; left: 12px; border-top: 2px solid; border-left: 2px solid; }
+        .corner-tr { top: 12px; right: 12px; border-top: 2px solid; border-right: 2px solid; }
+        .corner-bl { bottom: 12px; left: 12px; border-bottom: 2px solid; border-left: 2px solid; }
+        .corner-br { bottom: 12px; right: 12px; border-bottom: 2px solid; border-right: 2px solid; }
+    </style>
+</head>
+<body class="relative min-h-screen selection:bg-champagne-200 selection:text-champagne-600">
+
+    <!-- Canvas de Destellos Radiantes -->
+    <canvas id="sparkles-canvas"></canvas>
+
+    <!-- Mariposas flotantes en segundo plano -->
+    <div id="butterflies-wrapper"></div>
+
+    <!-- Reproductor oculto de YouTube para la canción -->
+    <div id="youtube-audio-player" class="hidden"></div>
+
+    <!-- Botón flotante de control de audio -->
+    <div class="fixed top-5 right-5 z-40">
+        <button id="musicToggleBtn" onclick="toggleMusic()" class="pulse-gold bg-white/90 backdrop-blur-md border border-champagne-300 text-champagne-600 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 active:scale-95" title="Música de fondo">
+            <i id="musicIcon" class="fas fa-music text-lg"></i>
+        </button>
+    </div>
+
+    <!-- SOBRE DE APERTURA / MODAL LUJOSO DE BIENVENIDA -->
+    <div id="envelope-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-pastel-100 via-champagne-50 to-pastel-50 px-4">
+        <div class="relative max-w-md w-full glass-card rounded-3xl p-8 text-center gold-luxury-shadow border-2 border-champagne-300/70">
+            
+            <div class="corner-ornament corner-tl"></div>
+            <div class="corner-ornament corner-tr"></div>
+            <div class="corner-ornament corner-bl"></div>
+            <div class="corner-ornament corner-br"></div>
+
+            <div class="mb-4">
+                <span class="inline-block px-4 py-1 rounded-full border border-champagne-400 bg-white/80 text-champagne-600 text-xs font-semibold uppercase tracking-widest">
+                    Invitación Exclusiva
+                </span>
+            </div>
+
+            <h2 class="font-cinzel text-xl sm:text-2xl text-gray-800 tracking-wider mb-1">Mis 15 Años</h2>
+            <h1 class="font-script text-5xl sm:text-6xl gold-metallic-text mb-4">Jhancy Alexandra</h1>
+            
+            <p class="font-serif italic text-gray-600 text-base mb-8">
+                Un momento mágico e inolvidable se aproxima. Haz clic para abrir la invitación.
+            </p>
+
+            <button onclick="openEnvelope()" class="w-full py-4 rounded-full bg-gradient-to-r from-champagne-400 via-champagne-300 to-champagne-500 text-white font-semibold uppercase tracking-widest text-xs sm:text-sm shadow-xl hover:from-champagne-500 hover:to-champagne-600 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-3">
+                <i class="fas fa-envelope-open text-base"></i>
+                <span>Abrir Invitación</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
+    <main class="max-w-3xl mx-auto px-4 py-10 sm:py-16 relative z-20">
+
+        <!-- ENCABEZADO / PORTADA -->
+        <header class="text-center mb-16 pt-4">
+            <div class="inline-flex items-center space-x-3 mb-4 px-6 py-1.5 rounded-full border border-champagne-300 bg-white/70 text-champagne-600 text-xs uppercase tracking-widest font-semibold shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-champagne-400 animate-ping"></span>
+                <span>Celebración de 15 Años</span>
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="font-cinzel text-3xl sm:text-5xl font-bold gold-metallic-text leading-tight mb-2 tracking-wide">
+                Jhancy Alexandra
+            </h1>
+            <p class="font-script text-4xl sm:text-5xl text-champagne-500 mb-6">
+                Isea Olivares
+            </p>
+
+            <div class="w-40 h-0.5 mx-auto bg-gradient-to-r from-transparent via-champagne-400 to-transparent mb-6"></div>
+
+            <p class="font-serif italic text-gray-700 text-lg sm:text-xl max-w-lg mx-auto leading-relaxed">
+                Tengo el honor de invitarte a compartir conmigo una noche inolvidable llena de alegría, sueños y gratitud.
+            </p>
+        </header>
+
+        <!-- FECHA & CUENTA REGRESIVA -->
+        <section class="mb-16">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 text-center gold-luxury-shadow relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-pastel-200/50 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-champagne-100/60 rounded-full blur-2xl"></div>
+
+                <h2 class="font-cinzel text-xl sm:text-2xl font-bold text-gray-800 mb-2 tracking-wide">
+                    Cuenta Regresiva
+                </h2>
+                <p class="text-xs text-champagne-600 uppercase tracking-widest font-medium mb-8">Sábado, 14 de Noviembre de 2026 &bull; 8:00 PM</p>
+
+                <!-- Grid de Contadores -->
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto">
+                    <div class="bg-white/90 border border-champagne-200/90 rounded-2xl p-3 sm:p-4 shadow-sm">
+                        <span id="days" class="block font-serif text-3xl sm:text-5xl font-bold gold-metallic-text">00</span>
+                        <span class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest font-semibold">Días</span>
+                    </div>
+                    <div class="bg-white/90 border border-champagne-200/90 rounded-2xl p-3 sm:p-4 shadow-sm">
+                        <span id="hours" class="block font-serif text-3xl sm:text-5xl font-bold gold-metallic-text">00</span>
+                        <span class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest font-semibold">Horas</span>
+                    </div>
+                    <div class="bg-white/90 border border-champagne-200/90 rounded-2xl p-3 sm:p-4 shadow-sm">
+                        <span id="minutes" class="block font-serif text-3xl sm:text-5xl font-bold gold-metallic-text">00</span>
+                        <span class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest font-semibold">Minutos</span>
+                    </div>
+                    <div class="bg-white/90 border border-champagne-200/90 rounded-2xl p-3 sm:p-4 shadow-sm">
+                        <span id="seconds" class="block font-serif text-3xl sm:text-5xl font-bold gold-metallic-text">00</span>
+                        <span class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest font-semibold">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENSAJE DE LOS PADRES -->
+        <section class="mb-16">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 text-center gold-luxury-shadow relative">
+                <div class="corner-ornament corner-tl"></div>
+                <div class="corner-ornament corner-tr"></div>
+                <div class="corner-ornament corner-bl"></div>
+                <div class="corner-ornament corner-br"></div>
+
+                <div class="text-champagne-400 text-4xl mb-2">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                
+                <h3 class="font-script text-3xl sm:text-4xl text-champagne-600 mb-1">Con la bendición de mis padres</h3>
+                <p class="font-cinzel text-lg sm:text-xl text-gray-800 font-bold mb-6 tracking-wide">
+                    Ana Olivares y Samuel Isea
+                </p>
+
+                <div class="max-w-xl mx-auto text-gray-700 italic font-serif leading-relaxed text-base sm:text-lg mb-6">
+                    <p class="mb-4">"Querida hija:</p>
+                    <p class="mb-4">Hoy celebramos un nuevo comienzo en tu vida, un sueño con esfuerzo, amor y fe se hace realidad.</p>
+                    <p>Estamos muy orgullosos de la mujer maravillosa que eres, que sigas siempre brillando, con la luz de tus valores, tus sueños y tu gran corazón."</p>
+                </div>
+
+                <div class="flex justify-center items-center space-x-3 text-champagne-400">
+                    <span class="w-12 h-px bg-champagne-300"></span>
+                    <i class="fas fa-heart text-xs"></i>
+                    <span class="w-12 h-px bg-champagne-300"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETALLES DE LUGAR Y FECHA -->
+        <section class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Fecha y Hora -->
+            <div class="glass-card rounded-3xl p-8 text-center gold-luxury-shadow flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-champagne-100 to-pastel-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-champagne-300 text-champagne-600 text-2xl shadow-inner">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gray-800 mb-2">¿Cuándo?</h3>
+                    <p class="text-champagne-600 font-medium text-lg mb-1">Sábado, 14 de Noviembre</p>
+                    <p class="text-gray-500 font-light text-sm mb-4">Año 2026</p>
+                </div>
+                <div class="border-t border-champagne-200/70 pt-4">
+                    <span class="inline-flex items-center text-gray-700 font-semibold text-sm">
+                        <i class="far fa-clock text-champagne-500 me-2 text-base"></i> 8:00 PM
+                    </span>
+                </div>
+            </div>
+
+            <!-- Ubicación -->
+            <div class="glass-card rounded-3xl p-8 text-center gold-luxury-shadow flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-champagne-100 to-pastel-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-champagne-300 text-champagne-600 text-2xl shadow-inner">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gray-800 mb-2">¿Dónde?</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                        50 mts más arriba del seguro social la Beatriz,<br>
+                        específicamente en la <span class="font-semibold text-gray-900">Aldea CHE GUEVARA</span>.
+                    </p>
+                </div>
+                <div class="border-t border-champagne-200/70 pt-4">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Seguro+Social+La+Beatriz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-5 py-3 rounded-full bg-gradient-to-r from-champagne-400 to-champagne-500 text-white text-xs font-semibold uppercase tracking-wider shadow-md hover:from-champagne-500 hover:to-champagne-600 transition-all duration-300">
+                        <i class="fas fa-location-arrow me-2"></i> Abrir Ubicación en Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VESTIMENTA Y LLUVIA DE SOBRES -->
+        <section class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Vestimenta -->
+            <div class="glass-card rounded-3xl p-8 text-center gold-luxury-shadow">
+                <div class="w-16 h-16 bg-gradient-to-br from-pastel-100 to-champagne-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-champagne-300 text-champagne-600 text-2xl shadow-inner">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="font-cinzel text-xl font-bold text-gray-800 mb-3">Código de Vestimenta</h3>
+                <span class="inline-block px-5 py-1.5 rounded-full bg-champagne-100 border border-champagne-300 text-champagne-600 font-semibold text-sm mb-3">
+                    Formal y Semi Formal
+                </span>
+                <p class="text-gray-500 text-xs leading-relaxed">
+                    Te invitamos a lucir atuendo elegante acorde a esta noche mágica.
+                </p>
+            </div>
+
+            <!-- Lluvia de Sobres -->
+            <div class="glass-card rounded-3xl p-8 text-center gold-luxury-shadow">
+                <div class="w-16 h-16 bg-gradient-to-br from-pastel-100 to-champagne-100 rounded-full flex items-center justify-center mx-auto mb-4 border border-champagne-300 text-champagne-600 text-2xl shadow-inner">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3 class="font-cinzel text-xl font-bold text-gray-800 mb-2">Muestra de Cariño</h3>
+                <p class="font-serif italic text-champagne-600 font-semibold text-sm mb-2">"Tu presencia es mi mayor regalo..."</p>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                    Pero si deseas obsequiarme algo más, te invito a participar en la <strong class="text-gray-800 uppercase tracking-wide">Lluvia de Sobres</strong>. Tu aporte en efectivo será de gran ayuda en mi futuro.
+                </p>
+            </div>
+        </section>
+
+        <!-- NOTA IMPORTANTE -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-pastel-100 via-white to-pastel-100 border border-champagne-300 rounded-2xl p-6 text-center shadow-md">
+                <div class="flex items-center justify-center space-x-2 text-champagne-600 font-semibold uppercase text-xs tracking-widest mb-1">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Nota Importante</span>
+                </div>
+                <p class="font-cinzel text-lg font-bold text-gray-800">
+                    Los pases no son transferibles.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
+        <section class="mb-12">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 text-center gold-luxury-shadow border-2 border-champagne-300/60">
+                <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-gray-800 mb-3">Confirmar Asistencia</h2>
+                <p class="text-gray-600 text-sm max-w-md mx-auto mb-6">
+                    Agradecemos confirmar tu presencia antes del <strong class="text-champagne-600 font-semibold">Viernes, 06 de Noviembre de 2026</strong>.
+                </p>
+
+                <!-- Botón de WhatsApp -->
+                <a href="https://wa.me/584261774533?text=Hola,%20deseo%20confirmar%20mi%20asistencia%20a%20los%2015%20A%C3%B1os%20de%20Jhancy%20Alexandra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-emerald-600 text-white font-semibold text-sm uppercase tracking-wider shadow-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105 active:scale-95 group">
+                    <i class="fab fa-whatsapp text-2xl me-3 group-hover:animate-bounce"></i>
+                    Confirmar por WhatsApp
+                </a>
+
+                <p class="text-xs text-gray-400 mt-4">
+                    Teléfono: +58 426-1774533
+                </p>
+            </div>
+        </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer class="text-center text-xs text-gray-400 py-6">
+            <p class="font-script text-3xl text-champagne-500 mb-1">Jhancy Alexandra</p>
+            <p>&copy; 2026 Celebración de 15 Años &bull; Todos los derechos reservados</p>
+        </footer>
+
+    </main>
+
+    <!-- LÓGICA DE JAVASCRIPT -->
+    <script>
+        // 1. Integración con YouTube API para audio sin barreras
+        var player;
+        var isPlaying = false;
+
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-audio-player', {
+                height: '0',
+                width: '0',
+                videoId: 'CXZ7Nz69OPg',
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 0,
+                    'loop': 1,
+                    'playlist': 'CXZ7Nz69OPg'
+                }
+            });
+        }
+
+        // Apertura del sobre de bienvenida e inicio de audio
+        function openEnvelope() {
+            const overlay = document.getElementById('envelope-overlay');
+            overlay.classList.add('envelope-hidden');
+            
+            // Intentar reproducir música
+            if (player && player.playVideo) {
+                player.playVideo();
+                isPlaying = true;
+                document.getElementById('musicIcon').className = "fas fa-pause text-lg";
+            }
+        }
+
+        function toggleMusic() {
+            var icon = document.getElementById('musicIcon');
+            if (!player) return;
+
+            if (isPlaying) {
+                player.pauseVideo();
+                isPlaying = false;
+                icon.className = "fas fa-music text-lg";
+            } else {
+                player.playVideo();
+                isPlaying = true;
+                icon.className = "fas fa-pause text-lg";
+            }
+        }
+
+        // 2. Reloj de Cuenta Regresiva
+        const eventDate = new Date("November 14, 2026 20:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. Canvas de DestellosSparkles (Glitter)
+        const canvas = document.getElementById('sparkles-canvas');
+        const ctx = canvas.getContext('2d');
+        let sparkles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Sparkle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.maxSize = Math.random() * 3 + 1.5;
+                this.alpha = 0;
+                this.speedAlpha = Math.random() * 0.02 + 0.005;
+                this.growing = true;
+                this.color = Math.random() > 0.4 ? '#d8af5c' : '#f8b4cd';
+            }
+
+            update() {
+                if (this.growing) {
+                    this.alpha += this.speedAlpha;
+                    if (this.alpha >= 1) {
+                        this.growing = false;
+                    }
+                } else {
+                    this.alpha -= this.speedAlpha;
+                    if (this.alpha <= 0) {
+                        this.reset();
+                    }
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < 70; i++) {
+            sparkles.push(new Sparkle());
+        }
+
+        function animateSparkles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            sparkles.forEach(s => {
+                s.update();
+                s.draw();
+            });
+            requestAnimationFrame(animateSparkles);
+        }
+        animateSparkles();
+
+        // 4. Generador de Mariposas SVG
+        function initButterflies() {
+            const wrapper = document.getElementById('butterflies-wrapper');
+            const count = 5;
+
+            const svgButterfly = `
+                <div class="butterfly-node">
+                    <svg class="butterfly-wings" width="32" height="32" viewBox="0 0 50 50" fill="none">
+                        <path d="M25 22C23 14 10 8 6 16C3 22 12 28 24 25C12 30 8 40 16 43C22 45 24 35 25 30C26 35 28 45 34 43C42 40 38 30 26 25C38 28 47 22 44 16C40 8 27 14 25 22Z" fill="#d8af5c" opacity="0.8"/>
+                        <path d="M25 20C24.5 17 21 12 18 14C16 15 18 18 24 19.5" stroke="#9e7826" stroke-width="1"/>
+                        <path d="M25 20C25.5 17 29 12 32 14C34 15 32 18 26 19.5" stroke="#9e7826" stroke-width="1"/>
+                    </svg>
+                </div>
+            `;
+
+            for (let i = 0; i < count; i++) {
+                const div = document.createElement('div');
+                div.innerHTML = svgButterfly;
+                const elem = div.firstElementChild;
+                
+                elem.style.animationDuration = `${Math.random() * 8 + 16}s`;
+                elem.style.animationDelay = `${Math.random() * 10}s`;
+                elem.style.top = `${Math.random() * 80}vh`;
+
+                wrapper.appendChild(elem);
+            }
+        }
+        initButterflies();
+    </script>
+</body>
+</html>

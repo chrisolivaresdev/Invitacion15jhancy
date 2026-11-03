@@ -57,6 +57,11 @@
             color-scheme: light only;
         }
 
+        /* Impedir que el sistema reemplace los colores (modo de colores forzados) */
+        @media (forced-colors: active) {
+            * { forced-color-adjust: none !important; }
+        }
+
         /* Estilos personalizados y degradados metálicos */
         body {
             background: linear-gradient(135deg, #fff9fb 0%, #fde8ef 40%, #fff7e6 100%);
@@ -417,6 +422,38 @@
 
     <!-- LÓGICA DE JAVASCRIPT -->
     <script>
+        // 0. Detectar y anular el modo oscuro forzado (Xiaomi/MIUI, Samsung, WebViews, etc.)
+        (function forceLightTheme() {
+            function isForceDarkened() {
+                var probe = document.createElement('div');
+                probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:1px;height:1px;background:#ffffff;color:#000000;';
+                (document.body || document.documentElement).appendChild(probe);
+                var cs = getComputedStyle(probe);
+                var bg = (cs.backgroundColor.match(/[\d.]+/g) || []).map(Number);
+                var fg = (cs.color.match(/[\d.]+/g) || []).map(Number);
+                probe.remove();
+                var bgDarkened = bg.length >= 3 && (bg[0] + bg[1] + bg[2]) < 380;
+                var fgLightened = fg.length >= 3 && (fg[0] + fg[1] + fg[2]) > 380;
+                return bgDarkened || fgLightened;
+            }
+
+            function checkAndFix() {
+                document.documentElement.style.filter = isForceDarkened()
+                    ? 'invert(1) hue-rotate(180deg)'
+                    : '';
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', checkAndFix);
+            } else {
+                checkAndFix();
+            }
+            window.addEventListener('load', checkAndFix);
+            if (window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkAndFix);
+            }
+        })();
+
         // 1. Integración con YouTube API para audio sin barreras
         var player;
         var isPlaying = false;

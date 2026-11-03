@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <title>15 Años - Jhancy Alexandra Isea Olivares</title>
 
     <!-- Tailwind CSS -->
@@ -50,6 +52,11 @@
     </script>
 
     <style>
+        /* Forzar siempre el modo claro, ignorando el modo oscuro del dispositivo */
+        :root {
+            color-scheme: light only;
+        }
+
         /* Estilos personalizados y degradados metálicos */
         body {
             background: linear-gradient(135deg, #fff9fb 0%, #fde8ef 40%, #fff7e6 100%);
